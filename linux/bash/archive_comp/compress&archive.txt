@@ -1,0 +1,23 @@
+
+tar -cf ziel_archiv_name ./quelle
+tar -cvf ziel_archiv_name ./quelle # -v verbose zeigt Zwischenschritte
+tar -xf archivname
+
+tar -czf 
+
+gzip    ->    gunzip   //  gzip -d   #      tar -czf  //  tar -xzf
+bzip2   ->    bunzip2  //  bzip2 -d  #      tar -cjf  //  tar -xjf
+xz      ->    unxz     //  xz -d     #      tar -cJf  //  tar -xJf
+
+# alle drei können mit -1 bis -9 zusätzlich verstärkt werden
+
+104K Dec  3 10:47 bigfile.gz
+116K Dec  3 10:46 bigfile_1.gz
+104K Dec  3 10:58 bigfile_6.gz
+103K Dec  3 10:46 bigfile_9.gz
+
+102K Dec  3 10:46 bigfile_1.bz2
+100K Dec  3 10:46 bigfile_9.bz2
+
+ 94K Dec  3 10:46 bigfile_1.xz
+ 88K Dec  3 10:46 bigfile_9.xz

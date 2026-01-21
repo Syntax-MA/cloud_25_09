@@ -1,0 +1,118 @@
+# #########################################################
+# #########################################################
+# Brace Expansion {}
+# #########################################################
+
+# {} können in einem promt genutzt werden um mehrere 
+# Varianten der jeweiligen Eingabe zu nutzen
+# Bevor der eigentliche Befehl ausgeführt wird
+# Wird die Eingabe, welche die {} enthält expandiert
+# in so viele Varianten, wie Werte in den Klammern
+
+# echo hello_{word!,class!}
+# -> echo hello_word! hello_class! #funktionierender Befehl
+
+# read -p "Wie geht's?"{ Bro, Sis}
+# -> read -p "Wie geht's? Bro" "Wie geht's? Sis" #kein funktionierender Befehl
+
+# {1..5} # Erzeugt alle Versionen im gewählten Zahlenbereich
+# {a..c} # Erzeugt alle Versionen im gewählten Buchstabenbereich
+# {A..C} # Erzeugt alle Versionen im gewählten Buchstabenbereich
+# Ausnahme in "" wir dies ignoriert
+
+# #########################################################
+# #########################################################
+# Globbing * ? []
+# #########################################################
+
+
+# Erlaubt uns unter Verwendung von sonderzeichen nach gewissen Musstern zu filtern.
+
+# * - keine oder "beliebig viele" beliebige Zeichen
+# ? - "ein" beliebiges Zeichen
+# [] - "einmal" eines der Zeichen, welches in den klammern steht
+
+# [ACMaq37]
+# [0-9]
+# [a-z]
+# [A-Z]
+# [0-9a-mN-Z]
+# [!0-9] / [^0-9] Ausschließen von Mustern
+
+# Bsp.:
+# ls -l ./*/logfile*
+# ls -l ./*/*
+
+# #########################################################
+# #########################################################
+# grep
+# #########################################################
+
+# grep (global regular expression print)
+# Ein Befehl um Texte nach Mustern zu durchsuchen. 
+# entweder eine Textdatei durchuchen
+# den Output eines vorherigen Befehlt pipen und durchsuchen 
+# Es wird immer nach einer Zeile mit dem Treffer gesucht.
+
+# grep "maus" haustiere.txt
+
+# cat haustiere.txt | grep "maus"
+
+# grep "Suchbegriff" datei.txt
+
+# grep -r "Suchbegriff" Verzeichnis #rekursiv Verzeichnisse durcjsuchen
+
+# grep -i "Suchbegriff" datei.txt  # Groß-/Kleinscheibung ignorieren
+# grep -n "Suchbegriff" datei.txt  # Zeilennummer mit anzeigen
+# grep -c "Suchbegriff" datei.txt. # Zählen der treffer
+# grep -v "Suchbegriff" datei.txt. # Alle Zeilen die nicht das Muster beinhalten
+
+# grep -E "Suchbegriff" datei.txt. # Expandet RegEx
+
+# #########################################################
+# #########################################################
+# #########################################################
+
+# Abgrenzung von Globbing zu regulären Ausdrücken:
+# Globbing und reguläre Ausdrücke sind beide Mustererkennungsmethoden, aber sie unterscheiden sich in ihrer Syntax und Anwendung.
+# Globbing wird hauptsächlich in der Shell verwendet, während reguläre Ausdrücke in vielen Programmiersprachen und Tools wie grep, sed und awk verwendet werden.
+# Reguläre Ausdrücke bieten eine viel umfangreichere und komplexere Syntax für die Mustererkennung im Vergleich zu den einfachen Wildcards des Globbings.
+# Zum Beispiel:
+# Globbing-Muster: *.txt (alle Dateien mit der Endung .txt)
+# Regulärer Ausdruck: ^.*\.txt$ (alle Dateien, die mit beliebigen Zeichen beginnen und mit .txt enden)
+# Während Globbing hauptsächlich für Dateinamen verwendet wird, können reguläre Ausdrücke auf beliebige Textdaten angewendet werden.
+# Insgesamt sind beide Methoden nützlich, aber sie dienen unterschiedlichen Zwecken und haben unterschiedliche Anwendungsbereiche.
+
+# #########################################################
+# #########################################################
+# RegEx
+# #########################################################
+
+# Was ist RegEx?
+# Reguläre Ausdrücke (RegEx) sind eine spezielle Syntax zur Beschreibung von Suchmustern in Texten.
+# Sie ermöglichen es, komplexe Muster zu definieren, um Zeichenfolgen zu suchen, zu extrahieren oder zu manipulieren.
+# Reguläre Ausdrücke werden in vielen Programmiersprachen und Tools verwendet, darunter grep, sed, awk, Perl und Python.
+# Grundlegende Elemente von regulären Ausdrücken:
+# .  - steht für ein beliebiges einzelnes Zeichen
+# *  - steht für null oder mehr Vorkommen des vorherigen Zeichens oder Musters
+# +  - steht für ein oder mehr Vorkommen des vorherigen Zeichens oder Musters
+# ?  - steht für null oder ein Vorkommen des vorherigen Zeichens oder Musters
+# ^  - steht für den Anfang einer Zeile
+# $  - steht für das Ende einer Zeile
+# [ ] - steht für eine Gruppe von Zeichen
+# ( ) - steht für eine Gruppe von Mustern
+# |  - steht für eine logische ODER-Verknüpfung zwischen Mustern
+# Beispiele für reguläre Ausdrücke:
+# 1. Suchen nach einer E-Mail-Adresse:
+# [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+# 2. Suchen nach einer Telefonnummer:
+# \+?[0-9]{1,3}[-.\s]?[0-9]{1,4}[-.\s]?[0-9]{1,4}[-.\s]?[0-9]{1,9}
+# 3. Suchen nach einem Datum im Format YYYY-MM-DD:
+# \d{4}-\d{2}-\d{2}
+# 4. Suchen nach einem Wort, das mit "cat" beginnt:
+# \bcat\w*
+# Diese Beispiele zeigen die grundlegenden Elemente und Anwendungen von regulären Ausdrücken.
+# Reguläre Ausdrücke sind ein mächtiges Werkzeug für die Textverarbeitung und werden häufig in der Programmierung und Systemadministration verwendet.
+
+# Siehe auch: https://www.tutonaut.de/regulaere-ausdruecke-retten-das-jahr-2302/
+
