@@ -35,3 +35,18 @@ def post_new_user(user_object: User, request: Request):
 
     return {"message": "post successful",
             "post_body": user_object}
+
+
+@app.get("/daily_joke")
+def get_joke():
+
+    joke = "Me! hahahaha"
+
+    return [{"joke": joke}]
+
+correct_user = "Tony"
+
+@app.post("/check_login")
+def post_check_login():
+
+    return True
