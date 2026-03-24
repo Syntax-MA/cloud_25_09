@@ -1,6 +1,10 @@
-// vraiables
+// variables
 
 const apiUrl = "http://127.0.0.1:8000/todos"
+
+
+
+
 
 // functions
 
@@ -51,4 +55,14 @@ addTodoButton.addEventListener("click", () => {
 
 // main
 
+let wert_a = 0
+
+
+
 loadTodos()
+
+// füge ein element mit text wert_a
+
+wert_a = 27
+
+// füge ein element mit text wert_a

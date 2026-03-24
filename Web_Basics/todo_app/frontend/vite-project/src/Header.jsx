@@ -1,9 +1,10 @@
 import React from "react";
 
-function Header() {
+function Header(props) {
   return (
     <header>
-      <h1>🚀My Awesome Todo List🚀</h1>
+      <h1>{props.emoji}My Awesome Todo List{props.emoji}</h1>
+      <p>Die ultra liste von {props.name}</p>
     </header>
   );
 }

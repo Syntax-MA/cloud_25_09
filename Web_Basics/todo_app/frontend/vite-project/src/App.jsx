@@ -1,12 +1,12 @@
 import Header from "./Header";
-import InputContainer from "./InputContainer";
-import TodoList from "./TodoList";
+import TodoList from "./components/TodoList";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <>
-      <Header />
-      <InputContainer />
+      <h1>Hello World</h1>
+      <Counter />
       <br />
       <TodoList />
     </>
